@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/bsene/coding-katas#readme",
   "devDependencies": {
-    "eslint": "^7.28.0"
+    "chai": "^4.3.4",
+    "eslint": "^7.28.0",
+    "esm": "^3.2.25"
   }
 }
