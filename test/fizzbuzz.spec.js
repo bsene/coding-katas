@@ -80,4 +80,23 @@ describe("Fizzbuzz tests suite", () => {
       expect(fizzbuzz.number(45)).to.equal("FizzBuzz");
     });
   });
+  describe("generate suite", () => {
+    it("should return 12Fizz from 1 to 3", () => {
+      expect(fizzbuzz.suite(3)).to.equal("12Fizz");
+    });
+    it("should return 12Fizz4BuzzFizz from 1 to 6", () => {
+      expect(fizzbuzz.suite(6)).to.equal("12Fizz4BuzzFizz");
+    });
+    it("should return 12Fizz4BuzzFizz78Fizz from 1 to 9", () => {
+      expect(fizzbuzz.suite(9)).to.equal("12Fizz4BuzzFizz78Fizz");
+    });
+    it("should return 12Fizz4BuzzFizz78FizzBuzz11Fizz from 1 to 12", () => {
+      expect(fizzbuzz.suite(12)).to.equal("12Fizz4BuzzFizz78FizzBuzz11Fizz");
+    });
+    it("should return 12Fizz4BuzzFizz78FizzBuzz11FizzFizz14FizzBuzz from 1 to 15", () => {
+      expect(fizzbuzz.suite(15)).to.equal(
+        "12Fizz4BuzzFizz78FizzBuzz11FizzFizz14FizzBuzz"
+      );
+    });
+  });
 });
