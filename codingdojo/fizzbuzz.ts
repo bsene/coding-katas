@@ -12,12 +12,7 @@ function range(to) {
 
 function create_fizzbuzz() {
   return {
-    number(n) {
-      if (isFizzBuzz(n)) return "FizzBuzz";
-      if (isBuzz(n)) return "Buzz";
-      if (isFizz(n)) return "Fizz";
-      return n.toString();
-    },
+    ,
     suite(n) {
       return range(n)
         .map((n) => this.number(n))
@@ -26,4 +21,11 @@ function create_fizzbuzz() {
   };
 }
 
-export { create_fizzbuzz };
+export default class Fizzbuzz {
+  number(n) {
+    if (isFizzBuzz(n)) return "FizzBuzz";
+    if (isBuzz(n)) return "Buzz";
+    if (isFizz(n)) return "Fizz";
+    return n.toString();
+  }
+}

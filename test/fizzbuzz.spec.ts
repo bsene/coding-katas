@@ -1,10 +1,10 @@
 import { expect } from "chai";
-import { create_fizzbuzz } from "../codingdojo/fizzbuzz";
+import Fizzbuzz from "../codingdojo/fizzbuzz";
 
 describe("Fizzbuzz tests suite", () => {
-  let fizzbuzz;
+  let fizzbuzz: Fizzbuzz;
   beforeEach(() => {
-    fizzbuzz = create_fizzbuzz();
+    fizzbuzz = new Fizzbuzz();
   });
   describe("is normal number", () => {
     it("should return 1 with 1", () => {
