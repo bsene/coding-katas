@@ -19,7 +19,9 @@ class Fizzbuzz
         if ($this->isFizz($num) && $this->isBuzz($num)) return "FizzBuzz";
 
         if ($this->isFizz($num)) return "Fizz";
+
         if ($this->isBuzz($num)) return "Buzz";
+
         return $num;
     }
 
