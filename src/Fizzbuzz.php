@@ -24,4 +24,12 @@ class Fizzbuzz
     {
         return $num % 5 === 0;
     }
+
+    public function suite(int $maximum): string
+    {
+        $result = array_map(function (int $number) {
+            return $this->number($number);
+        }, range(1, $maximum));
+        return join("", $result);
+    }
 }

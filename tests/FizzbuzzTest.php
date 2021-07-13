@@ -162,4 +162,65 @@ class FizzbuzzTest extends TestCase
         $this->assertSame("FizzBuzz", $actual);
     }
 
+    public function testShouldReturn12FizzWhenGenerateSuiteFrom1To3()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->suite(3);
+
+        // Assert
+        $this->assertSame("12Fizz", $actual);
+    }
+
+    public function testShouldReturn12Fizz4BuzzFizzWhenGenerateSuiteFrom1To6()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->suite(6);
+
+        // Assert
+        $this->assertSame("12Fizz4BuzzFizz", $actual);
+    }
+
+    public function testShouldReturn12Fizz4BuzzFizz78FizzWhenGenerateSuiteFrom1To9()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->suite(9);
+
+        // Assert
+        $this->assertSame("12Fizz4BuzzFizz78Fizz", $actual);
+    }
+
+    public function testShouldReturn12Fizz4BuzzFizz78FizzBuzz11FizzWhenGenerateSuiteFrom1To12()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->suite(12);
+
+        // Assert
+        $this->assertSame("12Fizz4BuzzFizz78FizzBuzz11Fizz", $actual);
+    }
+
+    public function testShouldReturn12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzzWhenGenerateSuiteFrom1To15()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->suite(15);
+
+        // Assert
+        $this->assertSame("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz", $actual);
+    }
+
+
 }
