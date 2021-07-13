@@ -6,25 +6,6 @@ namespace App;
 
 class Fizzbuzz
 {
-    public function number(int $num): string
-    {
-        if ($this->isDivibleBy3($num) && $this->isDivisibleBy5($num)) return "FizzBuzz";
-
-        if ($this->isDivibleBy3($num)) return "Fizz";
-        if ($this->isDivisibleBy5($num)) return "Buzz";
-        return $num;
-    }
-
-    private function isDivibleBy3(int $num): bool
-    {
-        return $num % 3 === 0;
-    }
-
-    private function isDivisibleBy5(int $num): bool
-    {
-        return $num % 5 === 0;
-    }
-
     public function suite(int $maximum): string
     {
         $result = array_map(function (int $number) {
@@ -32,4 +13,34 @@ class Fizzbuzz
         }, range(1, $maximum));
         return join("", $result);
     }
+
+    public function number(int $num): string
+    {
+        if ($this->isFizz($num) && $this->isBuzz($num)) return "FizzBuzz";
+
+        if ($this->isFizz($num)) return "Fizz";
+        if ($this->isBuzz($num)) return "Buzz";
+        return $num;
+    }
+
+    private function isFizz(int $num): bool
+    {
+        return $this->isDivisibleBy($num, 3) || $this->containsDigit($num, 3);
+    }
+
+    private function isDivisibleBy(int $num, int $divisor): bool
+    {
+        return $num % $divisor === 0;
+    }
+
+    private function containsDigit(int $num, int $digit): bool
+    {
+        return strpos((string)$num, (string)$digit) !== false;
+    }
+
+    private function isBuzz(int $num): bool
+    {
+        return $this->isDivisibleBy($num, 5) || $this->containsDigit($num, 5);
+    }
+
 }

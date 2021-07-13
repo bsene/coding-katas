@@ -210,7 +210,7 @@ class FizzbuzzTest extends TestCase
         $this->assertSame("12Fizz4BuzzFizz78FizzBuzz11Fizz", $actual);
     }
 
-    public function testShouldReturn12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzzWhenGenerateSuiteFrom1To15()
+    public function testShouldReturn12Fizz4BuzzFizz78FizzBuzz11FizzFizz14FizzBuzzWhenGenerateSuiteFrom1To15()
     {
         // Arrange
         $sut = new Fizzbuzz;
@@ -219,8 +219,79 @@ class FizzbuzzTest extends TestCase
         $actual = $sut->suite(15);
 
         // Assert
-        $this->assertSame("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz", $actual);
+        $this->assertSame("12Fizz4BuzzFizz78FizzBuzz11FizzFizz14FizzBuzz", $actual);
     }
 
+    public function testShouldReturnFizzWhen13()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(13);
+
+        // Assert
+        $this->assertSame("Fizz", $actual);
+    }
+
+    public function testShouldReturnFizzWhen23()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(23);
+
+        // Assert
+        $this->assertSame("Fizz", $actual);
+    }
+
+    public function testShouldReturnFizzWhen31()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(31);
+
+        // Assert
+        $this->assertSame("Fizz", $actual);
+    }
+
+    public function testShouldReturnBuzzWhen52()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(52);
+
+        // Assert
+        $this->assertSame("Buzz", $actual);
+    }
+
+    public function testShouldReturnBuzzWhen56()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(56);
+
+        // Assert
+        $this->assertSame("Buzz", $actual);
+    }
+
+    public function testShouldReturnBuzzWhen58()
+    {
+        // Arrange
+        $sut = new Fizzbuzz;
+
+        // Act
+        $actual = $sut->number(58);
+
+        // Assert
+        $this->assertSame("Buzz", $actual);
+    }
 
 }
