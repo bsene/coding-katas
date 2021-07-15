@@ -7,9 +7,14 @@ Class {
 { #category : #api }
 Fizzbuzz >> number: anInteger [
 
-	(anInteger % 3 = 0 and: [ anInteger % 5 = 0 ]) ifTrue: [ ^ 'FizzBuzz' ].
-	anInteger % 3 = 0 ifTrue: [ ^ 'Fizz' ].
-	anInteger % 5 = 0 ifTrue: [ ^ 'Buzz' ].
+	| isDivisibleBy3 isDivisibleBy5 |
+	
+	isDivisibleBy3 := anInteger % 3 = 0.
+	isDivisibleBy5 := anInteger % 5 = 0.
+
+	(isDivisibleBy3 and: [ isDivisibleBy5 ]) ifTrue: [ ^ 'FizzBuzz' ].
+	isDivisibleBy3 ifTrue: [ ^ 'Fizz' ].
+	isDivisibleBy5 ifTrue: [ ^ 'Buzz' ].
 
 
 	^ anInteger asString
